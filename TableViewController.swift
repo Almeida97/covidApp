@@ -11,6 +11,7 @@ protocol TableViewControllerDelegate {
     
     func didChangeCountry(_ country: String)
     
+    
 }
 
 class TableViewController: UITableViewController {
@@ -61,12 +62,18 @@ class TableViewController: UITableViewController {
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
+        tableView.register(UINib.init(nibName: "NewsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewsTableViewCell")
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
+        
         cell.selectionStyle = .none
+        cell.cellType = .countryList
+        cell.awakeFromNib()
         // write your code here
         let country = allCountries[indexPath.row]
-        cell.newsTitle?.text = country.name
-        cell.newsImage?.loadFrom(URLAddress: country.flag ?? "nada")
+        cell.countryName?.text = country.name
+        cell.countryImage?.loadFrom(URLAddress: country.flag!)
+        print ("the url is : \(country.flag)")
       
         return cell
     }
@@ -76,6 +83,7 @@ class TableViewController: UITableViewController {
         let selectedCountry = allCountries[indexPath.row].iso2
         let newsView = ViewController()
         delegate!.didChangeCountry(selectedCountry ?? "fr")
+        
         navigationController?.pushViewController(newsView, animated: true)
     
     }

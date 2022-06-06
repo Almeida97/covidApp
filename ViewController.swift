@@ -12,10 +12,12 @@ class ViewController: UITableViewController {
     var newsArticles = [Article]()
     var countryToLoad: String = "PT"
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(changeView))
         loadNewsFrom(country: countryToLoad)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -58,9 +60,18 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
         cell.selectionStyle = .none
         let article = newsArticles[indexPath.row]
-        cell.newsTitle.text = article.title
-        cell.newsDescription?.text = article.description
+        cell.roundedContainer.layer.cornerRadius = 20
+        let imageView = cell.newsImage
+        imageView?.clipsToBounds = true
+        imageView?.layer.cornerRadius = 20
+        imageView?.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMinXMinYCorner]
+        cell.newsDiscription.sizeToFit()
+        cell.newsTitle.sizeToFit()
+        
         cell.newsImage.loadFrom(URLAddress: article.urlToImage ?? "devia de haver default image")
+        cell.newsTitle.text = article.title
+        cell.newsDiscription?.text = article.description
+        
         return cell
     }
     

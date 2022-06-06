@@ -9,12 +9,37 @@ import UIKit
 
 class NewsTableViewCell: UITableViewCell {
     
-    @IBOutlet var newsImage: UIImageView!
+    enum NewsTableViewCellType {
+        case news;
+        case countryList
+    }
+    
+    public var cellType: NewsTableViewCellType = .news
+    
+    
+    @IBOutlet var roundedContainer: UIView!
+    
+    @IBOutlet var newsView: UIView!
+    @IBOutlet var countryView: UIView!
+    
+    @IBOutlet var newsDiscription: UILabel!
     @IBOutlet var newsTitle: UILabel!
-    @IBOutlet var newsDescription: UILabel!
+    @IBOutlet var newsImage: UIImageView!
+    
+    @IBOutlet var countryImage: UIImageView!
+    @IBOutlet var countryName: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        switch cellType {
+        case .news:
+            newsView.isHidden = false
+           countryView.isHidden = true
+        case .countryList:
+            newsView.isHidden = true
+            countryView.isHidden = false
+        }
         // Initialization code
     }
 
