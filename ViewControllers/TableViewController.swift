@@ -73,7 +73,6 @@ class TableViewController: UITableViewController {
         let country = allCountries[indexPath.row]
         cell.countryName?.text = country.name
         cell.countryImage?.loadFrom(URLAddress: country.flag!)
-        print ("the url is : \(country.flag)")
       
         return cell
     }

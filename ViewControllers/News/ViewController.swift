@@ -15,7 +15,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(changeView))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Change Country", style: .plain, target: self, action: #selector(changeView))
         loadNewsFrom(country: countryToLoad)
         
         // Do any additional setup after loading the view.
@@ -77,12 +77,12 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedUrl = newsArticles[indexPath.row].url
-        let newsView = self.storyboard!.instantiateViewController(identifier: "newsPage") as! newsPageController
-        newsView.titleLabel = newsArticles[indexPath.row].title
-        newsView.textLabel = newsArticles[indexPath.row].content
-        newsView.imageUrl = newsArticles[indexPath.row].urlToImage
+        let news = NewsViewController(nibName: "NewsViewController", bundle: nil)
+        news.titleLabel = newsArticles[indexPath.row].title
+        news.textLabel = newsArticles[indexPath.row].content
+        news.imageUrl = newsArticles[indexPath.row].urlToImage
         //flagsView.delegate = self
-        navigationController?.pushViewController(newsView, animated: true)
+        navigationController?.pushViewController(news, animated: true)
         
     }
 

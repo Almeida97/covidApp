@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="covidApp" customModuleProvider="target">
+            <connections>
+                <outlet property="errorLabel" destination="UVP-d9-A5q" id="xr2-uz-UvB"/>
+                <outlet property="loginButton" destination="Ul7-05-u2F" id="hCc-EH-S1t"/>
+                <outlet property="passwordField" destination="gDp-ZK-3bB" id="DZ6-85-WpB"/>
+                <outlet property="usernameField" destination="HpO-pO-FPK" id="gKj-uV-AIx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="kem-k2-19W">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-dZ-ber">
+                    <rect key="frame" x="40" y="348" width="334" height="200.5"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpO-pO-FPK">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-ZK-3bB">
+                            <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul7-05-u2F">
+                            <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="vC7-3I-JZ9"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                            <connections>
+                                <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="TgV-mK-mI0"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVP-d9-A5q">
+                            <rect key="frame" x="0.0" y="180" width="334" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="gDp-ZK-3bB" firstAttribute="height" secondItem="HpO-pO-FPK" secondAttribute="height" id="ave-pa-I5U"/>
+                        <constraint firstItem="Ul7-05-u2F" firstAttribute="height" secondItem="HpO-pO-FPK" secondAttribute="height" id="n7A-8m-YlB"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="24D-fa-U3e"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Taj-dZ-ber" firstAttribute="centerX" secondItem="kem-k2-19W" secondAttribute="centerX" id="14z-tr-kl1"/>
+                <constraint firstItem="24D-fa-U3e" firstAttribute="trailing" secondItem="Taj-dZ-ber" secondAttribute="trailing" constant="40" id="987-AK-95T"/>
+                <constraint firstItem="Taj-dZ-ber" firstAttribute="centerY" secondItem="kem-k2-19W" secondAttribute="centerY" id="TBM-fO-HV7"/>
+                <constraint firstItem="Taj-dZ-ber" firstAttribute="leading" secondItem="24D-fa-U3e" secondAttribute="leading" constant="40" id="kXg-G0-hzC"/>
+            </constraints>
+            <point key="canvasLocation" x="-175" y="-552"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
