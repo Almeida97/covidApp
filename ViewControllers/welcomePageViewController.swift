@@ -11,17 +11,30 @@ class welcomePageViewController: UIViewController {
 
     @IBOutlet var newsButton: UIButton!
     @IBOutlet var statsButton: UIButton!
+    @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var countryLabel: UILabel!
+    @IBOutlet var changeCountryButton: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        // if(user= exists){
+        //welcomeLabel.text = "Welcome \(username)"
+        //countryLabel.text = "\(Country)"
+        // }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = welcomePageViewController(nibName: "welcomePageController", bundle: nil)
-        let navController = UINavigationController(rootViewController: vc)
+       
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func changeCountryTapped(_ sender: Any) {
+        let flagView = FlagViewController()
+        navigationController?.pushViewController(flagView, animated: true)
+    }
+    
     @IBAction func newsTapped(_ sender: Any) {
-        let newsView = ViewController(nibName: "ViewController", bundle: nil)
+        let newsView = AllNewsViewController()
         navigationController?.pushViewController(newsView, animated: true)
     }
     

@@ -7,15 +7,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--All News View Controller-->
         <scene sceneID="xcJ-rS-EZ8">
             <objects>
-                <tableViewController id="Uk0-TZ-FVW" customClass="ViewController" customModule="covidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Uk0-TZ-FVW" customClass="AllNewsViewController" customModule="covidApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="irv-3e-MIS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="sectionIndexBackgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="infoCell" textLabel="5Xw-ot-kAp" detailTextLabel="j5T-Dp-xUb" style="IBUITableViewCellStyleSubtitle" id="L4v-7E-GEi">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
@@ -64,17 +64,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Uk0-TZ-FVW" kind="relationship" relationship="rootViewController" id="IEY-5Q-c7w"/>
+                        <segue destination="Uk0-TZ-FVW" kind="relationship" relationship="rootViewController" id="WyU-q3-aua"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBe-td-s0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-493" y="27"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Flag View Controller-->
         <scene sceneID="xwj-j0-s8f">
             <objects>
-                <tableViewController storyboardIdentifier="flagsView" id="BLi-a2-BvM" customClass="TableViewController" customModule="covidApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="flagsView" id="BLi-a2-BvM" customClass="FlagViewController" customModule="covidApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="eOU-Nd-1GT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,9 +104,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

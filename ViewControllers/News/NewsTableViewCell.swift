@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class NewsTableViewCell: UITableViewCell {
     
@@ -41,6 +42,7 @@ class NewsTableViewCell: UITableViewCell {
             countryView.isHidden = false
         }
         // Initialization code
+        roundedContainer.layer.cornerRadius = 20
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
